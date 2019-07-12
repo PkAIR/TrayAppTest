@@ -1,0 +1,27 @@
+{
+  "name": "trayapptest",
+  "version": "1.0.0",
+  "description": "Simple test for a tray app",
+  "main": "main.js",
+  "dependencies": {},
+  "devDependencies": {
+    "electron": "^5.0.6"
+  },
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PkAIR/TrayAppTest.git"
+  },
+  "keywords": [
+    "electron",
+    "tray"
+  ],
+  "author": "AIR",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PkAIR/TrayAppTest/issues"
+  },
+  "homepage": "https://github.com/PkAIR/TrayAppTest#readme"
+}

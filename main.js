@@ -1,5 +1,6 @@
-const {app, Tray, Menu, BrowserWindow} = require('electron');
+const { app, Tray, Menu, BrowserWindow } = require('electron');
 const path = require('path');
+const positioner = require('electron-traywindow-positioner');
 
 const iconPath = path.join(__dirname, 'icon.png');
 let tray;
@@ -7,22 +8,20 @@ let mainWindow;
 
 app.on('ready', () => {
     mainWindow = new BrowserWindow({
-        width:400,
+        width: 400,
         height: 600,
         frame: false,
         show: false
     });
 
     tray = new Tray(iconPath);
-    var contextMenu = Menu.buildFromTemplate([
-        {
+    var contextMenu = Menu.buildFromTemplate([{
             label: 'Item1',
             type: 'radio'
         },
         {
             label: 'Item2',
-            submenu: [
-                {
+            submenu: [{
                     label: 'Submenu1'
                 },
                 {
@@ -51,8 +50,9 @@ app.on('ready', () => {
     tray.setContextMenu(contextMenu);
 
     let a = tray.getBounds()
-    console.log(a.x, a.y, a.height, a.width); 
+    console.log(a.x, a.y, a.height, a.width);
     tray.on('click', (event, bounds) => {
+        positioner.position(mainWindow, bounds);
         const { x, y } = bounds;
         console.log(x, y);
         if (mainWindow.isVisible()) {

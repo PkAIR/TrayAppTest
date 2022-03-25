@@ -7,7 +7,7 @@
     "electron-traywindow-positioner": "0.0.2"
   },
   "devDependencies": {
-    "electron": "^7.2.4"
+    "electron": "^13.6.6"
   },
   "scripts": {
     "start": "electron ."
